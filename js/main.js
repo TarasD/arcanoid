@@ -3,38 +3,20 @@ document.addEventListener("DOMContentLoaded", ready);
 function ready() {
     "use strict";
 
-
-
     let current = getBallPostion();
 
-    let computed = computeBallPosition(5, current);
+    let computed = computeBallPosition(175, current);
     console.log(computed);
-
-
-
-    // let deg = 30;
-    //
-    // let target = {
-    //     top: 0,
-    //     left: Math.tan(deg * Math.PI/180) * current.top
-    // };
-    //
-    // let distance = Math.pow(Math.pow(current.top - target.top, 2) + Math.pow(current.left - target.left, 2), 0.5);
-    //
-    // let speed = distance / BALL_SPEED;
-
-
-
 
     setBallSpeedAndPosition(computed.speed, computed.target);
 
 
 
 
-    // setTimeout(() => {
-    //     console.log(computeBallPosition(30, {top: 800, left: computed.target.left}));
-    //
-    // }, computed.speed * 1000);
+    setTimeout(() => {
+        console.log(computeBallPosition(90 - 5, computed.target).target);
+
+    }, computed.speed * 1000);
 }
 
 
@@ -68,7 +50,6 @@ function computeBallPosition(deg, current) {
         goBottom = true;
     }
 
-
     let left = Math.tan(deg * Math.PI / 180) * current.top;
 
     console.log(left, 'left');
@@ -91,12 +72,8 @@ function computeBallPosition(deg, current) {
     }
 
 
-
-
     let distance = Math.pow(Math.pow(current.top - target.top, 2) + Math.pow(current.left - target.left, 2), 0.5);
-
     let speed = distance / BALL_SPEED;
-
 
     return {
         target,

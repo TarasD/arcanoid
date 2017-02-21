@@ -12,12 +12,7 @@
   height: 50px;
   border-radius: 100%;
   background: pink;
-  top: 375px;
-  left: 0;
-  transition: 0.85s linear;
-}
-
-.ball.move {
   top: 0;
-  left: 250px;
+  left: 375px;
+  transition: 0.85s linear;
 }
